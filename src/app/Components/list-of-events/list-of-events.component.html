@@ -1,0 +1,32 @@
+@if (events$ | async; as eventInfo){
+    <h1>List of Events</h1>
+    <table>
+        <thead>
+        <tr>
+            <th></th>
+            <th>Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        @for (evento of eventInfo; let idx = $index; track idx) {
+            <tr>
+                <td>{{ idx + 1 }}. </td>
+                <td><a [routerLink]="['/event/', evento.id]">{{evento.name}}</a></td>
+                <td>
+                    <button (click)="updateEvent(evento.id, evento)">📝</button>
+                </td>
+                <td>
+                    <button (click)="deleteEvent(evento.id)">🗑️</button>
+                </td>                
+            </tr>
+        }
+        <a [routerLink]="'/eventsubmitform/'">Add Event🗒️</a>
+        </tbody>
+    </table>
+    
+    
+}
+@else {
+    <h1>Event list empty!!!</h1> 
+}
+

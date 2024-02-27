@@ -1,0 +1,13 @@
+@if (eventInfo !== null) {
+	<div>
+		<h2>Name: {{eventInfo.name}}</h2>
+		<p>Description: {{eventInfo.description}}</p>
+		<p>Start Date: {{eventInfo.startdate}}</p>
+        <p>Location: {{eventInfo.location}}</p>
+        <p>Duration: {{eventInfo.duration}}</p>
+	</div>
+} @else {
+	<div>
+		<h2>Getting event detail...</h2>
+	</div>
+}
