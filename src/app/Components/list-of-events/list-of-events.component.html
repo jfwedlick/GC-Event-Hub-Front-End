@@ -1,4 +1,5 @@
 @if (events$ | async; as eventInfo){
+   <div>
     <h1>List of Events</h1>
     <table>
         <thead>
@@ -23,6 +24,7 @@
         <a [routerLink]="'/eventsubmitform/'">Add Event🗒️</a>
         </tbody>
     </table>
+</div>
     
     
 }
