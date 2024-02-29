@@ -5,4 +5,17 @@ div {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background: linear-gradient(to right, green, limegreen);
   }
+
+h2 {
+  margin: 0.25rem;
+  font-size: 4rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+p {
+  margin: 0rem;
+  font-size: 2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
