@@ -15,3 +15,11 @@ export interface SubmitEventInfo {
     duration: number
 }
 
+export interface UserEvents{
+    usrEvent: boolean;
+    eventId: number;
+    eventName: string;
+    favoriteId:number;
+    favorite: boolean;
+}
+
