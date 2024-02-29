@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment.development';
-import { Favorite } from '../Interfaces/favorite';
+import { Favorite, FavoriteList } from '../Interfaces/favorite';
 import { Observable } from 'rxjs';
 import { EventsService } from './events.service';
 
@@ -15,7 +15,7 @@ export class FavoritesService {
   baseUrl = `${environment.apiDomain}/api/Favorites`;
 
   getFavorites(){
-    return this.httpClient.get<Favorite[]>(this.baseUrl)
+    return this.httpClient.get<FavoriteList[]>(this.baseUrl)
   }
 
   deleteFavorite(id: number) {

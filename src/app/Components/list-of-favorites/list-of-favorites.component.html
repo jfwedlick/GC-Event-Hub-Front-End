@@ -1,0 +1,26 @@
+@if (favorites$ | async; as favoriteinfo){
+    <div>
+     <h1>List of Favorites</h1>
+     <table>
+         <thead>
+         <tr>
+             <th></th>
+             <th>Name</th>
+         </tr>
+         </thead>
+         <tbody>
+         @for (favorito of favoriteinfo; let idx = $index; track idx) {
+             <tr>
+                 <td>{{ idx + 1 }}. </td>
+                 <td><a [routerLink]="['/event/', favorito.id]">{{favorito.name}}</a></td>                   
+             </tr>
+         }
+         </tbody>
+     </table>
+ </div>
+     
+     
+ }
+ @else {
+     <h1>Favorites list empty!!!</h1> 
+ }

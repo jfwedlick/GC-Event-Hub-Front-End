@@ -18,9 +18,7 @@ export class ListOfFavoritesComponent {
     private eventsService: EventsService,
     private router: Router) { }
 
-    events$ = this.eventsService.getEvents();
     favorites$ = this.favoritesService.getFavorites();
 
-    eventList: Event[] = [];
     
 }
