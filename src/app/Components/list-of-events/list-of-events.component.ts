@@ -3,6 +3,8 @@ import { EventsService } from '../../Services/events.service';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { EventInfo } from '../../Interfaces/event';
+import { FavoritesService } from '../../Services/favorites.service';
+import { Favorite } from '../../Interfaces/favorite';
 
 @Component({
   selector: 'app-list-of-events',
@@ -14,10 +16,12 @@ import { EventInfo } from '../../Interfaces/event';
 export class ListOfEventsComponent {
 
   constructor(
-    private eventsService: EventsService,
+    private eventsService: EventsService, 
+    private favoriteEvents: FavoritesService,
     private router: Router) { }
 
   events$ = this.eventsService.getEvents();
+  favoriteEvents$ = this.favoriteEvents.getFavorites();
 
   deleteEvent(id: number) {
 
@@ -28,6 +32,12 @@ export class ListOfEventsComponent {
 
   updateEvent(id: number, event: EventInfo) {
     this.router.navigate(['eventsubmitform', id], { queryParams: event });
+  }
+  favoriteEvent(id: Favorite){
+    this.favoriteEvents.postFavorite(id).subscribe(() => {
+      this.favoriteEvents$ = this.favoriteEvents.getFavorites();
+    })
+    
   }
 
 }
