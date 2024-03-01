@@ -4,25 +4,26 @@ nav {
     padding-left: 1rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    background-color: gray;
-  
+    background-color: darkgreen;
     a {
       text-decoration: underline;
       color: lightblue;
       cursor: pointer;
-  
+      font-size: 2rem;
       &:visted {
         color: rgb(201, 28, 201);
       }
-  
       &:hover {
         color: blue;
       }
     }
   }
-  
   main {
     width: 100vw;
     height: 96vh;
   }
-  
+  header {
+    font-size: 5rem;
+    background: linear-gradient(to right, green, limegreen);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }

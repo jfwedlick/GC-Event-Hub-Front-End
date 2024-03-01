@@ -4,37 +4,33 @@
     <table>
         <thead>
         <tr>
-            <th></th>
-            <th>Name</th>
+            <br>
         </tr>
         </thead>
         <tbody>
         @for (evento of eventInfo; let idx = $index; track idx) {
             <tr>
-                <td>{{ idx + 1 }}. </td>
-                <td><a [routerLink]="['/event/', evento.id]">{{evento.name}}</a></td>
+
+                <td>{{ idx + 1 }}. <a [routerLink]="['/event/', evento.id]">{{evento.name}}</a></td>
                 <td>
-                    <button (click)="updateEvent(evento.id, evento)">📝</button>
+                    <button (click)="updateEvent(evento.id, evento)">📝</button> <button (click)="deleteEvent(evento.id)">🗑️</button>
                 </td>
                 <td>
-                    <button (click)="deleteEvent(evento.id)">🗑️</button>
                 </td>
                 @if(!evento.isFavorite){
                     <td>
-                        <button (click)="favoriteEvent(evento)">❤️</button>                        
+                        <button (click)="favoriteEvent(evento)">❤️</button>
                     </td>
-                    
-                }                                
+                }
             </tr>
         }
+        <br>
         <a [routerLink]="'/eventsubmitform/'">Add Event🗒️</a>
         </tbody>
     </table>
 </div>
-    
-    
 }
 @else {
-    <h1>Event list empty!!!</h1> 
+    <h1>Event list empty!!!</h1>
 }
 
