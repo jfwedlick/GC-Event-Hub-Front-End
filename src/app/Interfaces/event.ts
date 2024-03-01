@@ -2,7 +2,7 @@ export interface EventInfo {
     id: number;
     name: string;
     description: string;
-    startdate: Date;
+    startDate: Date;
     location: string;
     duration: number
 }
@@ -10,9 +10,19 @@ export interface EventInfo {
 export interface SubmitEventInfo {
     name: string;
     description: string;
-    startdate: Date;
+    startDate: Date;
     location: string;
     duration: number
+}
+
+export interface EventGet {
+    id: number;
+    name: string;
+    description: string;
+    startDate: Date;
+    location: string;
+    duration: number;
+    isFavorite: boolean
 }
 
 

@@ -20,7 +20,7 @@ export class EventSubmitFormComponent {
   id: null | number = null;
   name: string = '';
   description: string = '';
-  startdate!: Date;
+  startDate!: Date;
   location: string = '';
   duration: number = 0;
 
@@ -32,7 +32,7 @@ export class EventSubmitFormComponent {
         this.activatedRoute.queryParams.subscribe((queryParams) => {
           this.name = queryParams['name'];
           this.description = queryParams['description'];
-          this.startdate = queryParams['startdate'];
+          this.startDate = queryParams['startDate'];
           this.location = queryParams['location'];
           this.duration = +queryParams['duration'];
         })
@@ -53,7 +53,7 @@ export class EventSubmitFormComponent {
       id: this.id!,
       name: this.name,
       description: this.description,
-      startdate: this.startdate,
+      startDate: this.startDate,
       location: this.location,
       duration: this.duration
     }
@@ -69,7 +69,7 @@ export class EventSubmitFormComponent {
     const newEvent = {
       name: this.name,
       description: this.description,
-      startdate: this.startdate,
+      startDate: this.startDate,
       location: this.location,
       duration: this.duration
     };

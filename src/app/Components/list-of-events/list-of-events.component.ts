@@ -24,7 +24,6 @@ export class ListOfEventsComponent {
   favoriteEvents$ = this.favoriteEvents.getFavorites();
 
   deleteEvent(id: number) {
-
     this.eventsService.deleteEvent(id).subscribe(() => {
       this.events$ = this.eventsService.getEvents();
     })
@@ -33,11 +32,12 @@ export class ListOfEventsComponent {
   updateEvent(id: number, event: EventInfo) {
     this.router.navigate(['eventsubmitform', id], { queryParams: event });
   }
+
   favoriteEvent(id: Favorite){
     this.favoriteEvents.postFavorite(id).subscribe(() => {
+      this.events$ = this.eventsService.getEvents();
       this.favoriteEvents$ = this.favoriteEvents.getFavorites();
-    })
-    
+    })   
   }
 
 }

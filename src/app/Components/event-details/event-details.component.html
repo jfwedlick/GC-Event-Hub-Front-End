@@ -2,7 +2,7 @@
 	<div>
 		<h2>Name: {{eventInfo.name}}</h2>
 		<p>Description: {{eventInfo.description}}</p>
-		<p>Start Date: {{eventInfo.startdate}}</p>
+		<p>Start Date: {{eventInfo.startDate | date : 'longDate' }}</p>
         <p>Location: {{eventInfo.location}}</p>
         <p>Duration: {{eventInfo.duration}}</p>
 	</div>

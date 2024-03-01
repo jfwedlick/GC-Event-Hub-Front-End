@@ -19,9 +19,12 @@
                 <td>
                     <button (click)="deleteEvent(evento.id)">🗑️</button>
                 </td>
-                <td>
-                    <button (click)="favoriteEvent(evento)">❤️</button>
-                </td>                
+                @if(!evento.isFavorite){
+                    <td>
+                        <button (click)="favoriteEvent(evento)">❤️</button>                        
+                    </td>
+                    
+                }                                
             </tr>
         }
         <a [routerLink]="'/eventsubmitform/'">Add Event🗒️</a>

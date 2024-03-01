@@ -3,11 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { EventsService } from '../../Services/events.service';
 import { Subscription } from 'rxjs';
 import { EventInfo } from '../../Interfaces/event';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-event-details',
   standalone: true,
-  imports: [],
+  imports: [DatePipe],
   templateUrl: './event-details.component.html',
   styleUrl: './event-details.component.css'
 })
@@ -15,6 +16,7 @@ export class EventDetailsComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private eventService: EventsService) { }
+     
 
   paramsSubscription!: Subscription
   eventInfo: EventInfo | null = null;

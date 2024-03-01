@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment.development';
 import { Observable } from 'rxjs';
-import { EventInfo, SubmitEventInfo } from '../Interfaces/event';
+import { EventGet, EventInfo, SubmitEventInfo } from '../Interfaces/event';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class EventsService {
   baseUrl = `${environment.apiDomain}/api/Events`;
 
   getEvents() {
-    return this.httpClient.get<EventInfo[]>(this.baseUrl)
+    return this.httpClient.get<EventGet[]>(this.baseUrl)
   }
 
   getEvent(id: number): Observable<EventInfo> {
