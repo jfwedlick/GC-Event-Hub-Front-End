@@ -14,7 +14,7 @@
                  <td>{{ idx + 1 }}. </td>
                  <td><a [routerLink]="['/event/', favorito.id]">{{favorito.name}}</a></td>   
                  <td>
-                    <button (click)="deleteFavorite(favorito.id)">🗑️</button>
+                    <button (click)="deleteFavorite(favorito.id)">💔</button>
                 </td>                
              </tr>
          }
